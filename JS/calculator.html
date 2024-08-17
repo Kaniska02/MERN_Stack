@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1_id">This is heading</h1>
+    <input type="number" id="val1" placeholder="Enter first number"/>
+    <input type="number" id="val2" placeholder="Enter second number"/>
+    <br><br>
+    <button id="addButton">ADD</button>
+    <button id="subButton">SUB</button>
+    <button id="divButton">DIV</button>
+    <button id="mulButton">MULTIPLY</button>
+    <script>
+        document.getElementById("addButton").addEventListener("click", add);
+        document.getElementById("subButton").addEventListener("click", sub);
+        document.getElementById("divButton").addEventListener("click", div);
+        document.getElementById("mulButton").addEventListener("click", mul);
+
+        function add(){
+            let value1 = parseFloat(document.getElementById("val1").value);
+            let value2 = parseFloat(document.getElementById("val2").value);
+            if (isNaN(value1) || isNaN(value2)) {
+                document.getElementById("h1_id").innerHTML = "Please enter valid numbers";
+            } else {
+                document.getElementById("h1_id").innerHTML = value1 + value2;
+            }
+        }
+
+        function sub(){
+            let value1 = parseFloat(document.getElementById("val1").value);
+            let value2 = parseFloat(document.getElementById("val2").value);
+            if (isNaN(value1) || isNaN(value2)) {
+                document.getElementById("h1_id").innerHTML = "Please enter valid numbers";
+            } else {
+                document.getElementById("h1_id").innerHTML = value1 - value2;
+            }
+        }
+
+        function div(){
+            let value1 = parseFloat(document.getElementById("val1").value);
+            let value2 = parseFloat(document.getElementById("val2").value);
+            if (isNaN(value1) || isNaN(value2)) {
+                document.getElementById("h1_id").innerHTML = "Please enter valid numbers";
+            } else if (value2 === 0) {
+                document.getElementById("h1_id").innerHTML = "Cannot divide by zero";
+            } else {
+                document.getElementById("h1_id").innerHTML = value1 / value2;
+            }
+        }
+
+        function mul(){
+            let value1 = parseFloat(document.getElementById("val1").value);
+            let value2 = parseFloat(document.getElementById("val2").value);
+            if (isNaN(value1) || isNaN(value2)) {
+                document.getElementById("h1_id").innerHTML = "Please enter valid numbers";
+            } else {
+                document.getElementById("h1_id").innerHTML = value1 * value2;
+            }
+        }
+    </script>
+</body>
+</html>

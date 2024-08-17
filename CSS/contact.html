@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <ul class="menu active">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <h1 style="text-align: center;">Login Page</h1>
+
+    <div class="login-container" style="width: 300px; margin: 50px auto;">
+        <form action="login_process.html" method="POST">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="username" required style="width: 100%;">
+            </div>
+            <div style="margin-top: 20px;">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="password" required style="width: 100%;">
+            </div>
+            <div style="margin-top: 30px;">
+                <button type="submit" style="background-color: #4c6faf; color: white; padding: 10px 20px; border: none; cursor: pointer; width: 100%;">Sign In</button>
+            </div>
+        </form>
+        <div style="margin-top: 20px;">
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </div>
+</body>
+<footer style="text-align: center;">
+    <p>&copy; Kaniska 2024</p>
+</footer>
+</html>
