@@ -1,0 +1,90 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Main content styling */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-column {
+  flex: 1;
+}
+
+.right-column {
+  flex: 2;
+  padding-left: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer styling */
+footer {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+/* Smartphones (portrait and landscape) */
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+  }
+
+  nav ul {
+    text-align: center;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  .left-column, .right-column {
+    width: 100%;
+  }
+
+  .right-column {
+    padding-left: 0;
+  }
+}

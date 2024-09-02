@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product List</title>
+</head>
+<body>
+  <div id="sort-container">
+    <select id="sort-dropdown">
+      <option value="none">Sort By</option>
+      <option value="price-asc">Price (Low to High)</option>
+      <option value="price-desc">Price (High to Low)</option>
+      <option value="title-asc">Title (A-Z)</option>
+      <option value="title-desc">Title (Z-A)</option>
+    </select>
+  </div>
+  <div id="product-list"></div>
+  <script>
+    const productList = document.getElementById('product-list');
+    const sortDropdown = document.getElementById('sort-dropdown');
+
+    fetch('https://fakestoreapi.com/products')
+      .then(response => response.json())
+      .then(data => {
+        let products = data; 
+
+        sortDropdown.addEventListener('change', (event) => {
+          const selectedValue = event.target.value;
+          switch (selectedValue) {
+            case 'price-asc':
+              products = products.sort((a, b) => a.price - b.price);
+              break;
+            case 'price-desc':
+              products = products.sort((a, b) => b.price - a.price);
+              break;
+            case 'title-asc':
+              products = products.sort((a, b) => a.title.localeCompare(b.title));
+              break;
+            case 'title-desc':
+              products = products.sort((a, b) => b.title.localeCompare(a.title));
+              break;
+            default:
+              break;
+          }
+          renderProducts(products); 
+        });
+
+        renderProducts(products); 
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+      });
+
+    function renderProducts(products) {
+      productList.innerHTML = ''; 
+      products.forEach(product => {
+        productList.innerHTML += `
+          <div class="product">
+            <h3>${product.title}</h3>
+            <p>Price: $${product.price}</p>
+            <img src="${product.image}" alt="${product.title}">
+          </div>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>

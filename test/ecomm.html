@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product List</title>
+</head>
+<body>
+  <div id="product-list"></div>
+  <script>
+    const productList = document.getElementById('product-list');
+
+    fetch('https://fakestoreapi.com/products')
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(product => {
+          productList.innerHTML += `
+            <div class="product">
+              <h3>${product.title}</h3>
+              <p>Price: $${product.price}</p>
+              <img src="${product.image}" alt="${product.title}">
+            </div>
+          `;
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+      });
+  </script>
+</body>
+</html>

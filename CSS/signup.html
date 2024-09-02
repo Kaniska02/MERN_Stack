@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <ul class="menu active">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+    <h1 style="text-align: center;">Sign Up</h1>
+
+    <div class="signup-container" style="width: 300px; margin: 50px auto;">
+        <form id="signupForm" onsubmit="handleSignup(event)">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="username" required style="width: 100%;">
+            </div>
+            <div style="margin-top: 20px;">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="email" required style="width: 100%;">
+            </div>
+            <div style="margin-top: 20px;">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="password" required style="width: 100%;">
+            </div>
+            <div style="margin-top: 30px;">
+                <button type="submit" style="background-color: #4c6faf; color: white; padding: 10px 20px; border: none; cursor: pointer; width: 100%;">Sign Up</button>
+            </div>
+        </form>
+        <div style="margin-top: 20px;">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+        <div id="signupMessage" style="margin-top: 20px; text-align: center; color: green;"></div>
+    </div>
+</body>
+<footer style="text-align: center;">
+    <p>&copy; Kaniska 2024</p>
+</footer>
+<script>
+    function handleSignup(event) {
+        event.preventDefault();
+        document.getElementById('signupMessage').innerText = 'Sign up complete! Thank you for registering.';
+        // Clear form fields
+        document.getElementById('signupForm').reset();
+    }
+</script>
+</html>
